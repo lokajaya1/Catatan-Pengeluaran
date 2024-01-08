@@ -45,12 +45,12 @@ class _BottomState extends State<Bottom> {
               IconButton(
                 icon: Icon(
                   Icons.wallet, // Ganti dengan ikon yang sesuai
-                  color: _currentIndex == 2
+                  color: _currentIndex == 1
                       ? AppColors.blue60 // Warna saat terpilih
                       : Colors.grey, // Warna saat tidak terpilih
                 ),
                 onPressed: () {
-                  _updateIndex(2);
+                  _updateIndex(1);
                 },
               ),
               SizedBox(width: 40.0),
