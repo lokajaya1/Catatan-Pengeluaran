@@ -34,10 +34,13 @@ class _EditPageState extends State<EditPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.light().copyWith( // Use light theme
+        primaryColor: Colors.blue, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.blueAccent), // Set the accent color
+      ),
       home: Scaffold(
         body: Container(
           padding: EdgeInsets.all(20),
+          color: Colors.white, // Set the background color
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,12 +56,13 @@ class _EditPageState extends State<EditPage> {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black, // Set the text color
                       ),
                     ),
                     IconButton(
                       icon: Icon(
                         Icons.arrow_back,
-                        color: Colors.white,
+                        color: Colors.black, // Set the icon color
                       ),
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -88,7 +92,7 @@ class _EditPageState extends State<EditPage> {
                   title: Text(
                     'Tanggal',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black, // Set the text color
                       fontSize: 16,
                     ),
                   ),
@@ -96,13 +100,13 @@ class _EditPageState extends State<EditPage> {
                       ? Text(
                           '${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black, // Set the text color
                           ),
                         )
                       : Text(
                           'Pilih Tanggal',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black, // Set the text color
                           ),
                         ),
                   onTap: () async {
@@ -125,7 +129,7 @@ class _EditPageState extends State<EditPage> {
                 ),
                 AppButton(
                   text: "Simpan",
-                  color: Color(0xFF323232),
+                  color: Colors.blue, // Set the button color
                   onPressed: () async {
                     // Use selectedDate in your Supabase update
                     await Supabase.instance.client.from('expense2').update(
