@@ -26,8 +26,8 @@ Ensure you have Flutter installed on your machine. You can follow the official F
     flutter pub get
 
 3. **Running the App**
-   	1. **Connect a device or start an emulator.**
-	2. **Run the app:**
+   1. **Connect a device or start an emulator.**
+   2. **Run the app:**
 	```sh
        flutter run
  	```
